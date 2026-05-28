@@ -1,0 +1,282 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+
+import "../styles/global.css";
+import "../styles/navbar.css";
+import "../styles/footer.css";
+import "../styles/writeups.css";
+---
+
+<Layout title="Writeups | FavianRP">
+    <Navbar current="/writeups" />
+    <section class="container">
+        <div class="breadcrumb">
+            <a href="/">home</a>
+            <span>›</span>
+            <span class="current">writeups</span>
+        </div>
+
+        <section class="writeups-page">
+            <h1>Writeups</h1>
+
+            <div class="writeups-stats">
+                <span>All the time</span>
+                <div class="stats-line"></div>
+                <span>3 competitions</span>
+            </div>
+
+            <div class="writeups-grid">
+                <a
+                    class="writeup-card-link"
+                    href="https://hackmd.io/@dre4mer/WMS-2026"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <article class="writeup-card">
+                        <div class="writeup-top">
+                            <div>
+                                <span class="writeup-category crypto"
+                                    >Cryptography</span
+                                >
+                                <span class="writeup-category osint">OSINT</span
+                                >
+                                <span class="writeup-category ai">AI</span>
+
+                                <h3>Waskita Manunggal Siber 2026</h3>
+                            </div>
+                            <span class="writeup-arrow">↗</span>
+                        </div>
+
+                        <p>
+                            08 Apr. 2026, 09:00 WIB - 08 Apr. 2026, 15:00 WIB •
+                            3 challenges • Team
+                        </p>
+
+                        <div class="writeup-meta">
+                            <span>AI: 1</span>
+                            <span>Cryptography: 1</span>
+                            <span>OSINT: 1</span>
+                        </div>
+                    </article>
+                </a>
+
+                <a
+                    class="writeup-card-link"
+                    href="https://hackmd.io/@dre4mer/patriotctf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <article class="writeup-card">
+                        <div class="writeup-top">
+                            <div>
+                                <span class="writeup-category crypto"
+                                    >Cryptography</span
+                                >
+                                <span class="writeup-category osint">OSINT</span
+                                >
+                                <span class="writeup-category reverse"
+                                    >Reverse</span
+                                >
+
+                                <h3 class="title-with-badge">
+                                    PatriotCTF 2025
+                                    <span
+                                        class="ctftime-badge"
+                                        title="View event on CTFTime"
+                                        onclick="event.preventDefault(); event.stopPropagation(); window.open('https://ctftime.org/event/2850', '_blank');"
+                                    >
+                                        <img
+                                            src="https://pbs.twimg.com/profile_images/2189766987/ctftime-logo-avatar_400x400.png"
+                                            alt="CTFTime Icon"
+                                        />
+                                        CTFTime
+                                    </span>
+                                </h3>
+                            </div>
+                            <span class="writeup-arrow">↗</span>
+                        </div>
+
+                        <p>
+                            22 Nov. 2025, 01:00 WIB - 24 Nov. 2025, 01:00 WIB •
+                            4 challenges • Individual
+                        </p>
+
+                        <div class="writeup-meta">
+                            <span>Cryptography: 1</span>
+                            <span>OSINT: 1</span>
+                            <span>Rev: 2</span>
+                        </div>
+                    </article>
+                </a>
+
+                <a
+                    class="writeup-card-link"
+                    href="https://docs.google.com/document/d/19eIgp1OLTOZZ-ttJN_yt-qy9TmWFCJAC/edit?usp=sharing&ouid=100948281813452391693&rtpof=true&sd=true"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <article class="writeup-card">
+                        <div class="writeup-top">
+                            <div>
+                                <span class="writeup-category pwn">PWN</span>
+                                <span class="writeup-category crypto"
+                                    >Cryptography</span
+                                >
+                                <span class="writeup-category forensic"
+                                    >Forensic</span
+                                >
+                                <span class="writeup-category reverse"
+                                    >Reverse</span
+                                >
+                                <span class="writeup-category web"
+                                    >Web Explotation</span
+                                >
+
+                                <h3 class="title-with-badge">
+                                    Hackfest0x08 - CCUG
+                                </h3>
+                            </div>
+                            <span class="writeup-arrow">↗</span>
+                        </div>
+
+                        <p>
+                            20 Des. 2024 - 22 Des. 2024 • 13 challenges •
+                            Individual
+                        </p>
+
+                        <div class="writeup-meta">
+                            <span>PWN: 1</span>
+                            <span>Cryptography: 5</span>
+                            <span>Forensic: 2</span>
+                            <span>Rev: 2</span>
+                            <span>Web: 3</span>
+                        </div>
+                    </article>
+                </a>
+                <!-- upcoming writeups -->
+                <article class="writeup-card upcoming-card">
+                    <div class="writeup-top">
+                        <div>
+                            <span class="writeup-category web"
+                                >Web Exploitation</span
+                            >
+
+                            <h3>Upcoming - Writeup</h3>
+                        </div>
+
+                        <span class="writeup-status">⏳ Drafting</span>
+                    </div>
+
+                    <p>Currently documenting will be published soon!</p>
+
+                    <div class="writeup-meta">
+                        <span class="upcoming-tag">Upcoming</span>
+                        <span>Web: -</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <section class="setter-section">
+            <h2>Problem Setter</h2>
+            <p class="setter-desc">
+                Challenges I have designed and authored for CTF competitions.
+            </p>
+
+            <div class="writeups-grid">
+                <a
+                    class="writeup-card-link"
+                    href="#"
+                    onclick="event.preventDefault();"
+                >
+                    <article class="writeup-card">
+                        <div class="writeup-top">
+                            <div>
+                                <span class="writeup-category misc">Misc</span>
+                                <span class="writeup-category web"
+                                    >Web Exploitation</span
+                                >
+
+                                <h3>Hackfest0x09 - CCUG</h3>
+                            </div>
+
+                            <span class="no-url-badge">🚫 No URL</span>
+                        </div>
+
+                        <p>
+                            Developed multiple CTF challenges in web
+                            exploitation and miscellaneous, including an IDOR
+                            challenges and finding a person based on picture.
+                        </p>
+
+                        <div class="writeup-meta">
+                            <span class="author-tag">🏅 Author</span>
+                            <span class="writeup-category crypto">Easy</span>
+                        </div>
+                    </article>
+                </a>
+                <a
+                    class="writeup-card-link"
+                    href="https://ctf.ariaf.my.id/challenges"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <article class="writeup-card">
+                        <div class="writeup-top">
+                            <div>
+                                <span class="writeup-category osint">OSINT</span
+                                >
+
+                                <h3>FGTE CTF 2025</h3>
+                            </div>
+
+                            <span class="writeup-arrow">↗</span>
+                        </div>
+
+                        <p>
+                            Designed "🦖", a osint challenge focusing searching
+                            a person based only a picture.
+                        </p>
+
+                        <div class="writeup-meta">
+                            <span class="author-tag">🏅 Author</span>
+                            <span class="writeup-category crypto">Easy</span>
+                            <span>OSINT</span>
+                        </div>
+                    </article>
+                </a>
+
+                <article class="writeup-card upcoming-card">
+                    <div class="writeup-top">
+                        <div>
+                            <span class="writeup-category web">Web</span>
+                            <span class="writeup-category misc">Misc</span>
+
+                            <h3>Gunadarma Code Week 2.0 (Upcoming)</h3>
+                        </div>
+
+                        <span class="writeup-status">⏳ Developing</span>
+                    </div>
+
+                    <p>
+                        Developed multiple CTF challenges in web exploitation
+                        and digital forensics, including an RCE challenge with
+                        blacklist filter bypass techniques and a steganography
+                        challenge involving hidden file extraction.
+                    </p>
+
+                    <div class="writeup-meta">
+                        <span class="author-tag">🏅 Author</span>
+                        <span class="upcoming-tag">Draft</span>
+                        <span class="writeup-category web">Web</span>
+                        <span class="writeup-category misc">Misc</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </section>
+</Layout>
+
+<Footer />

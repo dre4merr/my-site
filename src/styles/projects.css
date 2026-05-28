@@ -1,0 +1,236 @@
+.projects-page {
+    padding-top: 8px;
+    animation: fadeUp 0.35s ease;
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--muted);
+    font-size: 0.92rem;
+    margin-bottom: 0px;
+}
+
+.breadcrumb a {
+    transition: color 0.2s ease;
+}
+
+.breadcrumb a:hover {
+    color: white;
+}
+
+.breadcrumb .current {
+    color: var(--accent);
+}
+
+.projects-page h1 {
+    font-size: 2.7rem;
+    line-height: 1;
+    letter-spacing: -1px;
+    margin-bottom: 26px;
+}
+
+/* GRID */
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+}
+
+/* jika hanya ada 1 card */
+.projects-grid .project-card-link:only-child {
+    grid-column: 1 / -1;
+}
+
+/* CARD */
+
+.project-card-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.project-card {
+    height: 100%;
+    min-height: 170px;
+    padding: 18px;
+    border: 1px solid var(--border);
+    background: var(--card);
+    border-radius: 16px;
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        background 0.2s ease;
+}
+
+.project-card-link:hover .project-card {
+    transform: translateY(-3px);
+    border-color: #333;
+    background: #141414;
+}
+
+/* TOP */
+
+.project-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.project-top h3 {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+/* ARROW */
+
+.project-arrow {
+    color: var(--accent);
+    font-size: 1rem;
+    flex-shrink: 0;
+    transition:
+        transform 0.2s ease,
+        color 0.2s ease;
+}
+
+.project-card-link:hover .project-arrow {
+    transform: translateX(2px) translateY(-2px);
+    color: #93c5fd;
+}
+
+/* DESCRIPTION */
+
+.project-card p {
+    color: var(--muted);
+    margin: 14px 0 18px;
+    font-size: 0.92rem;
+    line-height: 1.7;
+}
+
+/* TAGS */
+
+.project-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.tag.orange {
+    background: #3a1d0c;
+    color: #fb923c;
+    border-color: #5c2e14;
+}
+
+/*UPCOMING PROJECT CARD*/
+.upcoming-card {
+    border: 1px dashed #444; /* Garis putus-putus */
+    background: transparent; /* Background tembus pandang */
+    cursor: default; /* Kursor biasa karena bukan link */
+}
+
+/* Sedikit efek saat dihover, tapi tidak bergerak naik */
+.upcoming-card:hover {
+    transform: none;
+    border-color: #666;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.project-status {
+    font-size: 0.75rem;
+    color: #a3a3a3;
+    background: #1f1f1f;
+    padding: 4px 10px;
+    border-radius: 999px;
+    border: 1px solid #333;
+    white-space: nowrap;
+    animation: pulse-opacity 2.5s infinite ease-in-out;
+}
+
+/* Warna tag baru untuk "Upcoming" */
+.tag.grey {
+    background: #1f1f1f;
+    color: #a3a3a3;
+    border-color: #333333;
+}
+
+/* BUTTON */
+
+.projects-more {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 22px;
+}
+
+.more-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid #3b1d66;
+    background: rgba(91, 33, 182, 0.12);
+    color: #c4b5fd;
+    padding: 12px 18px;
+    border-radius: 999px;
+    font-size: 0.94rem;
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.more-btn:hover {
+    transform: translateY(-2px);
+    background: rgba(91, 33, 182, 0.18);
+    border-color: #5b21b6;
+}
+
+/* ANIMATION */
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .projects-page h1 {
+        font-size: 2.1rem;
+    }
+
+    .projects-more {
+        justify-content: center;
+    }
+
+    .more-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* Animasi efek bernapas (Pulse) */
+@keyframes pulse-opacity {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.4;
+    } /* Meredup ke 40%, jangan 0% agar tetap terlihat elegan */
+    100% {
+        opacity: 1;
+    }
+}

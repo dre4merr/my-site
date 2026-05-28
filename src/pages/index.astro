@@ -1,0 +1,243 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+
+import "../styles/global.css";
+import "../styles/home.css";
+import "../styles/animations.css";
+import "../styles/navbar.css";
+import "../styles/footer.css";
+---
+
+<Layout title="FavianRP | dre4mer">
+    <!-- NAVBAR -->
+    <Navbar current="/" />
+    <section class="container">
+        <!-- HERO -->
+        <section class="hero">
+            <h1 class="title">
+                <span id="hero-name">Favian Rafi Pratama</span>
+            </h1>
+
+            <p>
+                I'm a undergraduate Informatics Student who learns about the
+                digital world, especially Web Development and sometimes also
+                play
+                <a
+                    href="https://ctftime.org/user/216248"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="badge red ctf-link"
+                >
+                    <img
+                        src="https://pbs.twimg.com/profile_images/2189766987/ctftime-logo-avatar_400x400.png"
+                        alt="CTFtime"
+                    />
+
+                    CTF
+                </a> to sharpen my skills in cybersecurity, Web Exploitation, and
+                many more.
+            </p>
+
+            <p>
+                Explore my writeups on the
+                <a href="/writeups" class="tag">Writeups</a> page and my projects
+                on the <a href="/projects" class="tag">Projects</a> page.
+            </p>
+        </section>
+
+        <!-- TOP GRID -->
+        <section class="top-grid">
+            <div class="todo-card">
+                Dari dulu begitulah cinta, derita nya tiada akhir yang beda cuma
+                pelakunya, Tapi luka nya itu itu aja -yukatheo
+            </div>
+
+            <a
+                class="spotify-card-link"
+                href="https://soundcloud.com/weirdgenius_music/desire"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <div class="spotify-card">
+                    <img
+                        src="https://i1.sndcdn.com/artworks-bmIODr3JYYCr-0-t1080x1080.jpg"
+                        alt="Desire"
+                    />
+
+                    <div class="spotify-info">
+                        <span class="muted">Last played...</span>
+
+                        <h3>Desire</h3>
+
+                        <p>Weird Genius</p>
+                    </div>
+
+                    <div class="wave">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+            </a>
+        </section>
+
+        <!-- PROJECTS -->
+        <section class="projects">
+            <h2>Projects</h2>
+
+            <div class="project-grid">
+                <a
+                    class="project-card-link"
+                    href="https://github.com/FavianRP/chatbot-gunadarma"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <div class="project-card">
+                        <div class="project-top">
+                            <h3>chatbot-gunadarma</h3>
+
+                            <span class="project-arrow">↗</span>
+                        </div>
+
+                        <p>
+                            This project was created as part of a Data Science -
+                            Natural Language Processing assignment based on a
+                            chatbot.
+                        </p>
+
+                        <div class="project-tags">
+                            <span class="tag yellow">Project</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a
+                    class="project-card-link"
+                    href="https://github.com/FavianRP/passwd-checker"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <div class="project-card">
+                        <div class="project-top">
+                            <h3>Passwd Checker</h3>
+
+                            <span class="project-arrow">↗</span>
+                        </div>
+
+                        <p>A tool to check how strong your password is.</p>
+
+                        <div class="project-tags">
+                            <span class="tag pink">Cyber Security</span>
+                            <span class="tag blue">Python</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- EDUCATION & EXPERIENCE -->
+        <section class="edex">
+            <h2>Education & Experience</h2>
+
+            <div class="edex-grid">
+                <!-- EDUCATION -->
+                <div class="edex-card">
+                    <div class="edex-header">
+                        <img
+                            src="/icons/logo-gunadarma.png"
+                            alt="Gunadarma University"
+                        />
+
+                        <div>
+                            <h3>Universitas Gunadarma</h3>
+                            <span>Undergraduate student of Informatics</span>
+                        </div>
+                    </div>
+
+                    <p>
+                        Studying cybersecurity, software engineering,
+                        networking, and system architecture.
+                    </p>
+
+                    <div class="project-tags">
+                        <span class="tag yellow">University</span>
+                    </div>
+                </div>
+
+                <!-- EXPERIENCE -->
+                <div class="edex-card">
+                    <div class="edex-header">
+                        <img src="/icons/logo-ccug.png" alt="CCUG" />
+
+                        <div>
+                            <h3>Cyber Community Universitas Gunadarma</h3>
+                            <span>Core Team</span>
+                        </div>
+                    </div>
+
+                    <p>
+                        Participating in CTF competitions, solving web
+                        exploitation, digital forensic and many more challenges.
+                    </p>
+
+                    <div class="project-tags">
+                        <span class="tag pink">CTF</span>
+                        <span class="tag green">Web</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <!-- FOOTER -->
+    <Footer />
+
+    <script>
+        document.addEventListener("astro:page-load", () => {
+            const heroName = document.getElementById("hero-name");
+
+            if (!heroName) return;
+
+            const originalName = "Favian Rafi Pratama";
+            const hoverName = "dre4mer";
+
+            let isAnimating = false;
+
+            function animateName(text) {
+                if (isAnimating) return;
+
+                isAnimating = true;
+
+                heroName.classList.remove("name-in");
+                heroName.classList.add("name-out");
+
+                setTimeout(() => {
+                    heroName.textContent = text;
+
+                    heroName.classList.remove("name-out");
+                    heroName.classList.add("name-in");
+
+                    setTimeout(() => {
+                        isAnimating = false;
+                    }, 250);
+                }, 180);
+            }
+
+            heroName.addEventListener("mouseenter", () => {
+                if (heroName.textContent !== hoverName) {
+                    animateName(hoverName);
+                }
+            });
+
+            heroName.addEventListener("mouseleave", () => {
+                if (heroName.textContent !== originalName) {
+                    animateName(originalName);
+                }
+            });
+        });
+    </script>
+</Layout>

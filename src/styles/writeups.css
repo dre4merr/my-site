@@ -1,0 +1,366 @@
+.writeups-page {
+    padding-top: 8px;
+    animation: fadeUp 0.35s ease;
+}
+
+.writeups-page h1 {
+    font-size: 2.7rem;
+    line-height: 1;
+    letter-spacing: -1px;
+    margin-bottom: 18px;
+}
+
+/* STATS */
+
+.writeups-stats {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 32px;
+    color: var(--muted);
+    font-size: 0.92rem;
+    letter-spacing: 0.4px;
+    white-space: nowrap;
+}
+
+.stats-line {
+    flex: 1px;
+    height: 1px;
+    background: #2a2a2a;
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--muted);
+    font-size: 0.92rem;
+    margin-bottom: 0px;
+}
+
+.breadcrumb a {
+    transition: color 0.2s ease;
+}
+
+.breadcrumb a:hover {
+    color: white;
+}
+
+.breadcrumb .current {
+    color: var(--accent);
+}
+
+/* GRID */
+
+.writeups-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+}
+
+/* CARD */
+
+.writeup-card-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.writeup-card {
+    height: 100%;
+    min-height: 210px;
+    padding: 20px;
+    border: 1px solid var(--border);
+    background: var(--card);
+    border-radius: 18px;
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        background 0.2s ease;
+}
+
+.writeup-card-link:hover .writeup-card {
+    transform: translateY(-3px);
+    border-color: #333;
+    background: #141414;
+}
+
+/* TOP */
+
+.writeup-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.writeup-top h3 {
+    margin: 10px 0 0;
+    font-size: 1.02rem;
+    line-height: 1.5;
+}
+
+/* CATEGORY */
+
+.writeup-category {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 500;
+    margin-right: 4px;
+    margin-bottom: 8px;
+}
+
+.writeup-category.ai {
+    background: #0f172a;
+    color: #7dd3fc;
+}
+
+.writeup-category.web {
+    background: #0f172a;
+    color: #60a5fa;
+}
+
+.writeup-category.misc {
+    background: #1e1b4b;
+    color: #c084fc;
+}
+
+.writeup-category.pwn {
+    background: #2b0b0b;
+    color: #ff6b6b;
+}
+
+.writeup-category.crypto {
+    background: #052e2b;
+    color: #5eead4;
+}
+.writeup-category.osint {
+    background: #0b2a3a;
+    color: #7dd3fc;
+}
+.writeup-category.forensic {
+    background: #0f172a;
+    color: #38bdf8;
+}
+.writeup-category.reverse {
+    background: #111827;
+    color: #9ca3af;
+}
+
+/* DESCRIPTION */
+
+.writeup-card p {
+    margin: 18px 0 20px;
+    color: var(--muted);
+    line-height: 1.8;
+    font-size: 0.92rem;
+}
+
+/* UPCOMING WRITEUP CARD */
+
+.upcoming-card {
+    border: 1px dashed #444; /* Garis putus-putus */
+    background: transparent;
+    cursor: default; /* Kursor biasa (bukan pointer) karena tidak bisa diklik */
+}
+
+/* Sedikit efek nyala saat dihover, tapi tidak naik */
+.upcoming-card:hover {
+    transform: none;
+    border-color: #666;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+/* Badge untuk status "Drafting" di pojok kanan atas */
+.writeup-status {
+    font-size: 0.75rem;
+    color: #a3a3a3;
+    background: #1f1f1f;
+    padding: 4px 10px;
+    border-radius: 999px;
+    border: 1px solid #333;
+    white-space: nowrap;
+    height: fit-content;
+    animation: pulse-opacity 2.5s infinite ease-in-out;
+}
+
+/* Warna khusus untuk tag "Upcoming" di bagian bawah card */
+.writeup-meta span.upcoming-tag {
+    background: #1f1f1f;
+    color: #a3a3a3;
+    border-color: #333333;
+}
+
+/* PROBLEM SETTER SECTION */
+
+.setter-section {
+    margin-top: 64px; /* Memberikan jarak dari bagian Writeups di atasnya */
+    padding-bottom: 32px;
+    animation: fadeUp 0.35s ease;
+}
+
+.setter-section h2 {
+    font-size: 2.2rem;
+    line-height: 1;
+    letter-spacing: -0.5px;
+    margin-bottom: 12px;
+    color: #ffffff;
+}
+
+.setter-desc {
+    color: var(--muted);
+    font-size: 0.94rem;
+    margin-bottom: 26px;
+}
+
+/* Warna khusus untuk tag Author (Pembuat Soal) */
+.writeup-meta span.author-tag {
+    background: #2b1d42; /* Ungu gelap */
+    color: #c4b5fd; /* Ungu terang */
+    border-color: #4c3275;
+    font-weight: 600;
+}
+
+/* --- CTFTIME BADGE IN CARD --- */
+.title-with-badge {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.ctftime-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    font-family: inherit;
+    background: #2b1010; /* Warna merah gelap khas tema kamu */
+    color: #ff7a7a;
+    border: 1px solid #4a1d1d;
+    cursor: pointer;
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.ctftime-badge img {
+    width: 14px;
+    height: 14px;
+    object-fit: contain;
+}
+
+/* Hover effect khusus untuk badge-nya saja */
+.ctftime-badge:hover {
+    background: #3b1616;
+    border-color: #ff7a7a;
+    transform: translateY(-2px);
+}
+
+/* META */
+
+.writeup-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.writeup-meta span {
+    font-size: 0.82rem;
+    padding: 6px 10px;
+    border-radius: 999px;
+    border: 1px solid #262626;
+    background: #111;
+    color: #cfcfcf;
+}
+
+/* ARROW */
+
+.writeup-arrow {
+    color: var(--accent);
+    font-size: 1rem;
+    flex-shrink: 0;
+    transition:
+        transform 0.2s ease,
+        color 0.2s ease;
+}
+
+.writeup-card-link:hover .writeup-arrow {
+    transform: translateX(2px) translateY(-2px);
+    color: #93c5fd;
+}
+
+/* NO URL / NO LINK STYLES */
+
+/* Matikan kursor pointer dan efek naik (transform) jika tidak ada link */
+.writeup-card-link.no-link {
+    cursor: default;
+}
+
+.writeup-card-link.no-link:hover .writeup-card {
+    transform: none; /* Card tidak naik saat di-hover */
+    border-color: #444; /* Efek hover tipis saja */
+    background: var(--card); /* Background tetap tidak berubah drastis */
+}
+
+/* Desain Badge No URL di pojok kanan atas */
+.no-url-badge {
+    font-size: 0.75rem;
+    color: #a3a3a3; /* Abu-abu kalem */
+    background: #1f1f1f;
+    padding: 4px 10px;
+    border-radius: 999px;
+    border: 1px solid #333;
+    white-space: nowrap;
+    height: fit-content;
+    font-weight: 500;
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+    .writeups-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .writeups-page h1 {
+        font-size: 2.1rem;
+    }
+
+    .writeups-desc {
+        font-size: 0.94rem;
+    }
+}
+
+/* ANIMATION */
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animasi efek bernapas (Pulse) */
+@keyframes pulse-opacity {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.4;
+    } /* Meredup ke 40%, jangan 0% agar tetap terlihat elegan */
+    100% {
+        opacity: 1;
+    }
+}

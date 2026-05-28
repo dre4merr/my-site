@@ -1,0 +1,192 @@
+/* =========================================
+   1. WRAPPER & CONTAINER UTAMA
+   ========================================= */
+.navbar-wrapper {
+    width: 100%;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
+    margin-bottom: 2px;
+}
+
+.navbar {
+    width: 100%;
+    max-width: 860px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center; /* Sejajarkan vertikal */
+    padding: 1rem 2rem;
+    gap: 16px;
+    flex-wrap: wrap; /* Wajib agar menu HP bisa turun ke bawah */
+}
+
+/* =========================================
+   2. LOGO (Mendorong sisanya ke kanan)
+   ========================================= */
+.logo {
+    color: var(--accent);
+    font-size: 1rem;
+    font-weight: 700;
+    margin-right: auto; /* <--- KUNCI UTAMA: Mendorong menu & tombol mentok ke kanan */
+    text-decoration: none;
+}
+
+/* =========================================
+   3. MENU LINKS
+   ========================================= */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-links a {
+    border: 1px solid var(--border);
+    background: #101010;
+    padding: 10px 14px;
+    border-radius: 10px;
+    color: #cfcfcf;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.nav-links a:hover {
+    background: #171717;
+    border-color: #2f2f2f;
+}
+
+.nav-links .active {
+    background: #181818;
+    color: white;
+}
+
+/* =========================================
+   4. ACTIONS (Tombol Light mode & Hamburger)
+   ========================================= */
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.icon-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: 1px solid var(--border);
+    background: #101010;
+    padding: 10px 14px;
+    border-radius: 10px;
+    color: #cfcfcf;
+    font-size: 0.9rem;
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.icon-btn:hover {
+    background: #171717;
+    border-color: #2f2f2f;
+}
+
+.icon-btn svg {
+    display: block;
+}
+
+/* Sembunyikan hamburger di desktop dengan paksa */
+.mobile-only {
+    display: none !important;
+}
+
+/* =========================================
+   5. POPUP DARKMODE
+   ========================================= */
+#darkmode-popup {
+    position: fixed;
+    top: 24px;
+    right: 24px;
+    background: #111;
+    color: #cfcfcf;
+    border: 1px solid #333;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    z-index: 1000;
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.popup-hidden {
+    opacity: 0;
+    transform: translateY(-20px);
+    pointer-events: none;
+}
+
+.popup-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =========================================
+   6. TAMPILAN MOBILE (HP)
+   ========================================= */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 1rem 1.5rem;
+    }
+
+    /* Munculkan hamburger di HP */
+    .mobile-only {
+        display: flex !important;
+    }
+
+    /* Menu Links disembunyikan & diatur vertikal */
+    .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        order: 3; /* Memaksa kotak menu turun ke baris bawah */
+        margin-top: 12px;
+        gap: 8px;
+    }
+
+    /* Class yang ditambah/dihapus via JS saat diklik */
+    .nav-links.open {
+        display: flex;
+        animation: slideDown 0.2s ease forwards;
+    }
+
+    /* Bikin tombol menu memanjang penuh di layar HP */
+    .nav-links a {
+        width: 100%;
+        text-align: center;
+        padding: 12px;
+    }
+
+    /* Logo tetap nempel di kiri */
+    .logo {
+        order: 1;
+    }
+
+    /* Tombol Actions (Sun + Hamburger) tetap nempel di kanan */
+    .nav-actions {
+        order: 2;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

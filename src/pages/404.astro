@@ -1,0 +1,28 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+
+import "../styles/global.css";
+import "../styles/navbar.css";
+import "../styles/footer.css";
+import "../styles/404.css";
+---
+
+<Layout title="404 - Not Found | FavianRP">
+    <Navbar current="" />
+    <section class="container">
+        <section class="not-found-page">
+            <div class="error-code" data-text="404">404</div>
+
+            <h1 class="error-title">Page Not Found</h1>
+            <p class="error-desc">
+                Oops! Looks like this page has been moved, removed, or
+                intentionally hidden.
+            </p>
+            <a href="/" class="home-btn">Return to Home</a>
+        </section>
+    </section>
+
+    <Footer />
+</Layout>

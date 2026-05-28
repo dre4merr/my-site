@@ -1,0 +1,194 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+
+import "../styles/global.css";
+import "../styles/navbar.css";
+import "../styles/footer.css";
+import "../styles/projects.css";
+---
+
+<Layout title="Projects | FavianRP">
+    <!-- NAVBAR -->
+    <Navbar current="/projects" />
+    <section class="container">
+        <!-- BREADCRUMB -->
+        <div class="breadcrumb">
+            <a href="/">home</a>
+
+            <span>›</span>
+
+            <span class="current">projects</span>
+        </div>
+
+        <!-- PROJECTS -->
+        <section class="projects-page">
+            <h1>Projects</h1>
+
+            <div class="projects-grid">
+                <!-- PROJECT -->
+                <a
+                    class="project-card-link"
+                    href="https://github.com/FavianRP/chatbot-gunadarma"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <div class="project-card">
+                        <div class="project-top">
+                            <h3>chatbot-gunadarma</h3>
+
+                            <span class="project-arrow">↗</span>
+                        </div>
+
+                        <p>
+                            NLP chatbot project created for Data Science
+                            assignment.
+                        </p>
+
+                        <div class="project-tags">
+                            <span class="tag yellow">NLP</span>
+
+                            <span class="tag blue">Python</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- PROJECT -->
+                <a
+                    class="project-card-link"
+                    href="https://github.com/FavianRP/passwd-checker"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <div class="project-card">
+                        <div class="project-top">
+                            <h3>Passwd Checker</h3>
+
+                            <span class="project-arrow">↗</span>
+                        </div>
+
+                        <p>A tool to check how strong your password is.</p>
+
+                        <div class="project-tags">
+                            <span class="tag pink">Cyber Security</span>
+
+                            <span class="tag blue">Python</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- PROJECT -->
+                <a
+                    class="project-card-link"
+                    href="https://github.com/FavianRP/gcw_discordbot"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <div class="project-card">
+                        <div class="project-top">
+                            <h3>Discord CTF Bot</h3>
+
+                            <span class="project-arrow">↗</span>
+                        </div>
+
+                        <p>
+                            Discord bot integrated with CTFd webhook
+                            notifications for Gunadarma Code Week 2.0.
+                        </p>
+
+                        <div class="project-tags">
+                            <span class="tag pink">Discord</span>
+
+                            <span class="tag blue">Python</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- PROJECT -->
+                <a
+                    class="project-card-link"
+                    href="https://favianrp.github.io/carkas.github.io/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <div class="project-card">
+                        <div class="project-top">
+                            <h3>CarKas</h3>
+
+                            <span class="project-arrow">↗</span>
+                        </div>
+
+                        <p>
+                            Created a responsive landing page for a used car
+                            sales website as a senior high school final project.
+                        </p>
+
+                        <div class="project-tags">
+                            <span class="tag yellow">Project</span>
+
+                            <span class="tag orange">HTML</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- PROJECT -->
+                <a
+                    class="project-card-link"
+                    href="https://github.com/FavianRP/InfoKelas"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <div class="project-card">
+                        <div class="project-top">
+                            <h3>InfoKelas</h3>
+
+                            <span class="project-arrow">↗</span>
+                        </div>
+
+                        <p>
+                            A classroom utility web application to help manage
+                            schedules and classroom information.
+                        </p>
+
+                        <div class="project-tags">
+                            <span class="tag yellow">Project</span>
+
+                            <span class="tag green">Web App</span>
+                        </div>
+                    </div>
+                </a>
+                <!-- upcoming project -->
+                <div class="project-card upcoming-card">
+                    <div class="project-top">
+                        <h3>Micro Saas Project</h3>
+
+                        <span class="project-status">⏳ Upcoming</span>
+                    </div>
+
+                    <p>Upcoming</p>
+
+                    <div class="project-tags">
+                        <span class="tag grey">Upcoming</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BUTTON -->
+        <div class="projects-more">
+            <a
+                href="https://github.com/FavianRP"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="more-btn"
+            >
+                ✨ Check out my other projects →
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <Footer />
+</Layout>

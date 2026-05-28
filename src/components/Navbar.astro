@@ -1,0 +1,79 @@
+---
+const { current = "/" } = Astro.props;
+---
+
+<header class="navbar-wrapper">
+    <nav class="navbar">
+        <a href="/" class="logo">dre4mer</a>
+
+        <div class="nav-links" id="nav-links">
+            <a class={current === "/" ? "active" : ""} href="/"> Home </a>
+            <a class={current === "/writeups" ? "active" : ""} href="/writeups">
+                Writeups
+            </a>
+            <a class={current === "/projects" ? "active" : ""} href="/projects">
+                Projects
+            </a>
+        </div>
+
+        <div class="nav-actions">
+            <button id="theme-btn" class="icon-btn" aria-label="theme">
+                ☀️
+            </button>
+
+            <button
+                id="hamburger-btn"
+                class="icon-btn mobile-only"
+                aria-label="menu"
+            >
+                <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+
+            <div id="darkmode-popup" class="popup-hidden">
+                eh sorry, ownernya cuman suka darkmode hehe 🦇
+            </div>
+        </div>
+    </nav>
+
+    <script>
+        document.addEventListener("astro:page-load", () => {
+            const themeBtn = document.getElementById("theme-btn");
+            const popup = document.getElementById("darkmode-popup");
+            const hamburgerBtn = document.getElementById("hamburger-btn");
+            const navLinks = document.getElementById("nav-links");
+
+            // Logika Popup Darkmode
+            if (themeBtn && popup) {
+                themeBtn.addEventListener("click", () => {
+                    popup.classList.remove("popup-hidden");
+                    popup.classList.add("popup-visible");
+
+                    setTimeout(() => {
+                        popup.classList.remove("popup-visible");
+                        popup.classList.add("popup-hidden");
+                    }, 3000);
+                });
+            }
+
+            // Logika Toggle Hamburger Menu
+            if (hamburgerBtn && navLinks) {
+                hamburgerBtn.addEventListener("click", () => {
+                    navLinks.classList.toggle("open");
+                });
+            }
+        });
+    </script>
+</header>
