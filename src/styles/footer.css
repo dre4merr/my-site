@@ -1,23 +1,23 @@
 /* FOOTER UTAMA */
 .footer {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    gap: 16px;
 
-    margin-top: 80px;
-    padding: 2rem 0;
+    width: 100%;
+    max-width: 860px;
+    margin: 80px auto 0;
+
+    padding: 2rem 2rem;
     border-top: 1px dashed rgba(255, 255, 255, 0.15);
 
     color: var(--muted, #9d9d9d);
     font-size: 0.92rem;
 }
 
-/* WADAH UNTUK LINK KONTAK */
 .footer-links {
     display: flex;
-    justify-content: center;
     align-items: center;
     gap: 24px;
     flex-wrap: wrap;
@@ -33,7 +33,6 @@
         transform 0.2s ease;
 }
 
-/* EFEK HOVER LINK KONTAK */
 .footer-links a:hover {
     color: #ffffff;
     transform: translateY(-2px);
@@ -45,16 +44,18 @@
     opacity: 0.6;
 }
 
-/* MOBILE RESPONSIVE */
+/* MOBILE RESPONSIVE (HP) */
 @media (max-width: 768px) {
     .footer {
+        flex-direction: column-reverse; /* Balik arah: Teks credit di bawah, Link di atas */
+        justify-content: center;
+        gap: 24px;
         margin-top: 60px;
         padding: 1.5rem 1rem;
-        gap: 24px;
     }
 
     .footer-links {
-        flex-direction: column;
-        gap: 16px;
+        justify-content: center;
+        gap: 20px;
     }
 }
