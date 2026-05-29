@@ -1,4 +1,11 @@
-/* FOOTER UTAMA */
+/* 1. WRAPPER (Untuk garis putus-putus full layar) */
+.footer-wrapper {
+    width: 100%;
+    border-top: 1px dashed rgba(255, 255, 255, 0.15); /* Garis dipindah ke sini */
+    margin-top: 80px; /* Jarak atas dipindah ke sini */
+}
+
+/* 2. FOOTER UTAMA (Untuk konten yang rapi di tengah) */
 .footer {
     display: flex;
     flex-direction: row;
@@ -6,16 +13,15 @@
     align-items: center;
 
     width: 100%;
-    max-width: 860px;
-    margin: 80px auto 0;
-
-    padding: 2rem 2rem;
-    border-top: 1px dashed rgba(255, 255, 255, 0.15);
+    max-width: 860px; /* Menahan agar konten tidak mentok ke ujung layar */
+    margin: 0 auto; /* Menengahkan kotak */
+    padding: 2rem 20px; /* Padding menyesuaikan dengan container */
 
     color: var(--muted, #9d9d9d);
     font-size: 0.92rem;
 }
 
+/* WADAH UNTUK LINK KONTAK */
 .footer-links {
     display: flex;
     align-items: center;
@@ -46,11 +52,14 @@
 
 /* MOBILE RESPONSIVE (HP) */
 @media (max-width: 768px) {
+    .footer-wrapper {
+        margin-top: 60px;
+    }
+
     .footer {
-        flex-direction: column-reverse; /* Balik arah: Teks credit di bawah, Link di atas */
+        flex-direction: column-reverse;
         justify-content: center;
         gap: 24px;
-        margin-top: 60px;
         padding: 1.5rem 1rem;
     }
 
