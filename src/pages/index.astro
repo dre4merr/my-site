@@ -191,53 +191,116 @@ import "../styles/footer.css";
                 </div>
             </div>
         </section>
+
+        <!-- CERTIFICATIONS -->
+        <section class="edex" style="margin-top: 64px;">
+            <h2>Certifications</h2>
+
+            <div class="edex-grid">
+                <div class="edex-card">
+                    <div class="edex-header">
+                        <div>
+                            <h3>Introduction to Cybersecurity</h3>
+                            <span>Cisco Networking Academy</span>
+                        </div>
+                    </div>
+
+                    <div class="cert-img-wrapper">
+                        <img
+                            src="/images/Introduction_to_Cybersecurity.png"
+                            alt="Introduction_to_Cybersecurity cisco"
+                        />
+                    </div>
+
+                    <div class="cert-meta">
+                        <span><strong>Issued:</strong> Jan 2025</span>
+                        <span
+                            ><strong>Credential ID:</strong
+                            >29191fa5-f647-495e-830c-177f8fc34ca8</span
+                        >
+                    </div>
+
+                    <div class="project-tags">
+                        <span class="tag pink">Cybersecurity</span>
+                        <span class="tag blue">Offensive Security</span>
+                    </div>
+                </div>
+
+                <div class="edex-card">
+                    <div class="edex-header">
+                        <div>
+                            <h3>Introduction to Information Security</h3>
+                            <span>Cyber Academy Indonesia</span>
+                        </div>
+                    </div>
+
+                    <div class="cert-img-wrapper">
+                        <img
+                            src="/images/intro to information security.jpeg"
+                            alt="intro to information security"
+                        />
+                    </div>
+
+                    <div class="cert-meta">
+                        <span><strong>Issued:</strong> Dec 2024</span>
+                        <span
+                            ><strong>Credential ID:</strong> PKMI01112244285</span
+                        >
+                    </div>
+
+                    <div class="project-tags">
+                        <span class="tag yellow">Security Basics</span>
+                    </div>
+                </div>
+            </div>
+        </section>
     </section>
+</Layout>
 
-    <!-- FOOTER -->
-    <Footer />
+<!-- FOOTER -->
+<Footer />
 
-    <script>
-        document.addEventListener("astro:page-load", () => {
-            const heroName = document.getElementById("hero-name");
+<script>
+    document.addEventListener("astro:page-load", () => {
+        const heroName = document.getElementById("hero-name");
 
-            if (!heroName) return;
+        if (!heroName) return;
 
-            const originalName = "Favian Rafi Pratama";
-            const hoverName = "dre4mer";
+        const originalName = "Favian Rafi Pratama";
+        const hoverName = "dre4mer";
 
-            let isAnimating = false;
+        let isAnimating = false;
 
-            function animateName(text) {
-                if (isAnimating) return;
+        function animateName(text) {
+            if (isAnimating) return;
 
-                isAnimating = true;
+            isAnimating = true;
 
-                heroName.classList.remove("name-in");
-                heroName.classList.add("name-out");
+            heroName.classList.remove("name-in");
+            heroName.classList.add("name-out");
+
+            setTimeout(() => {
+                heroName.textContent = text;
+
+                heroName.classList.remove("name-out");
+                heroName.classList.add("name-in");
 
                 setTimeout(() => {
-                    heroName.textContent = text;
+                    isAnimating = false;
+                }, 250);
+            }, 180);
+        }
 
-                    heroName.classList.remove("name-out");
-                    heroName.classList.add("name-in");
-
-                    setTimeout(() => {
-                        isAnimating = false;
-                    }, 250);
-                }, 180);
+        heroName.addEventListener("mouseenter", () => {
+            if (heroName.textContent !== hoverName) {
+                animateName(hoverName);
             }
-
-            heroName.addEventListener("mouseenter", () => {
-                if (heroName.textContent !== hoverName) {
-                    animateName(hoverName);
-                }
-            });
-
-            heroName.addEventListener("mouseleave", () => {
-                if (heroName.textContent !== originalName) {
-                    animateName(originalName);
-                }
-            });
         });
-    </script>
-</Layout>
+
+        heroName.addEventListener("mouseleave", () => {
+            if (heroName.textContent !== originalName) {
+                animateName(originalName);
+            }
+        });
+    });
+</script>
